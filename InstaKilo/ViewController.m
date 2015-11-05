@@ -142,10 +142,20 @@
         case 1:
             [self sortByGroup];
             break;
-            
         default:
             break;
     }
+}
+- (IBAction)deleteGesture:(UITapGestureRecognizer *)sender {
+    
+    CGPoint location = [sender locationInView:self.collectionView];
+    NSIndexPath *tappedIndexPath = [self.collectionView indexPathForItemAtPoint:location];
+    NSString *tappedKeyValue = [self.keysArray objectAtIndex:tappedIndexPath.section];
+    NSArray *tappedKeyArray = [self.imageDictionary objectForKey:tappedKeyValue];
+    Photos *photo = [tappedKeyArray objectAtIndex:tappedIndexPath.item];
+    [self.photosArray removeObject:photo];
+    
+    [self.collectionView reloadData];
 }
 
 @end

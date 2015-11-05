@@ -62,7 +62,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.080160741800000004" green="1" blue="0.053159360609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.3803921569" green="0.71764705880000002" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="D8y-Q1-0uQ" firstAttribute="centerY" secondItem="LJW-aM-Kf0" secondAttribute="centerY" id="G0I-rP-BlL"/>
                                         <constraint firstItem="D8y-Q1-0uQ" firstAttribute="centerX" secondItem="LJW-aM-Kf0" secondAttribute="centerX" id="PEA-fr-FF6"/>
@@ -78,12 +78,16 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hxr-5J-OPR" secondAttribute="bottom" id="EmU-x4-Ct0"/>
                             <constraint firstAttribute="trailing" secondItem="Hxr-5J-OPR" secondAttribute="trailing" id="RnR-hA-rxA"/>
                             <constraint firstItem="Hxr-5J-OPR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ajf-rk-aRY"/>
                             <constraint firstItem="Hxr-5J-OPR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="o65-fr-hzc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wpz-go-uLi" appends="YES" id="MBZ-Yo-30N"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="rj4-Z2-MXH">
                         <nil key="title"/>
@@ -104,6 +108,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="wpz-go-uLi">
+                    <connections>
+                        <action selector="deleteGesture:" destination="BYZ-38-t0r" id="KAc-Ta-N2v"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="dXn-ST-LdI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1057" y="337"/>
         </scene>
